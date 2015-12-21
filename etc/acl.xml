@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="Alin_Cadou::main_menu" title="CADOURI" sortOrder="10" >
+                        <resource id="Alin_Cadou::cadou" title="Manage" sortOrder="40">
+                            <resource id="Alin_Cadou::save" title="Save Cadou" sortOrder="10" />
+                            <resource id="Alin_Cadou::delete" title="Delete Cadou" sortOrder="20" />
+                            <resource id="Alin_Cadou::notify" title="Notify" sortOrder="20" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

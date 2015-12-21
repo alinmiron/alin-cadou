@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <tab id="cadou" sortOrder="1">
+            <label>Cadou</label>
+        </tab>
+        <section id="cadou"  showInDefault="1">
+            <tab>cadou</tab>
+            <label>Settings</label>
+            <resource>Magento_Config::config</resource>
+            <group id="email"  showInDefault="1">
+                <label>Module Settings</label>
+                <field id="template" translate="label" type="select"
+                       sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Template used when sending newsletter </label>
+                    <source_model>Alin\Cadou\Model\System\Config\EmailTemplate</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

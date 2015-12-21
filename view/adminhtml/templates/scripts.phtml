@@ -1,0 +1,33 @@
+<script type="text/javascript">// <![CDATA[
+    require([
+            'jquery',
+            'mage/calendar'
+        ],
+        function($) {
+            $('#anchor-content').on('click', 'button.notify', function(event)
+            {
+                $.ajax({
+                    url: "/admin/cadou/cadou/notify/",
+                    type:"POST",
+                    data:$('#edit_form').serialize(),
+                    dataType:"json",
+                    success:function(data)
+                    {
+                     if (data.result)
+                     {
+                      window.location.reload();
+                     }
+                    }
+                });
+            });
+
+         /*   $("#edit_form #cadou_birthdate").calendar({
+                showTime: false,
+                defaultDate:"-20y",
+                showOn:"both",
+                dateFormat: "dd-mm-yy"
+            });*/
+
+        }
+    );
+    // ]]></script>

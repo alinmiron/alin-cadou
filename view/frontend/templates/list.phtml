@@ -1,0 +1,29 @@
+<?php /** @var $block \Alin\Cadou\Block\CadouList */ ?>
+<?php
+/**
+ * @TODO : this is just a basic sketch and should be developed further more if needed to be shown in the frontend
+ */
+?>
+<h1><?php echo __('Cadouri') ?></h1>
+<ul class="blog-post-list">
+    <?php /** @var $cadou \Alin\Cadou\Model\Cadou */ ?>
+    <?php foreach ($block->getCadouri() as $cadou): ?>
+        <pre>
+         <?php //var_dump($cadou); ?>
+        </pre>
+
+        <li class="cadou-list-item">
+            <h3 class="cadou-item-title">
+                <a href=""><?php echo $cadou["fullname"].' # '.$cadou["birthdate"] ?></a>
+            </h3>
+
+            <div class="blog-post-item-content">
+                <?php echo $cadou["name"].', '.$cadou["name"].', '.$cadou["qty"]; ?>
+            </div>
+
+            <div class="blog-post-item-meta">
+
+            </div>
+        </li>
+    <?php endforeach; ?>
+</ul>

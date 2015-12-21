@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Alin_Cadou::main_menu" title="CADOURI" module="Alin_Cadou" sortOrder="20" resource="Alin_Cadou::cadou"  parent="Magento_Sales::sales"/>
+        <add id="Alin_Cadou::cadou" title="Manage"  module="Alin_Cadou" sortOrder="2" parent="Alin_Cadou::main_menu"
+             action="cadou/cadou" resource="Alin_Cadou::cadou" />
+    </menu>
+</config>

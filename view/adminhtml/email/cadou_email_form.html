@@ -1,0 +1,80 @@
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject You received a present: {{var subject}} @-->
+<!--@vars {
+"var data.producturl":"URL for Product",
+"var data.product":"Product",
+"var data.email":"Receiver Email",
+"var data.name":"Receiver Name",
+"var data.customer_name":"Customer Name",
+"var data.customer_email":"Customer Email"
+} @-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        {{var template_styles|raw}}
+
+        {{css file="css/email.css"}}
+    </style>
+</head>
+<body>
+{{inlinecss file="css/email-inline.css"}}
+
+<!-- Begin wrapper table -->
+<table class="wrapper" width="100%">
+    <tr>
+        <td class="wrapper-inner" align="center">
+            <table class="main" align="center">
+                <tr>
+                    <td class="header">
+                        <a class="logo" href="{{store url=""}}">
+                        <img
+                                {{if logo_width}}
+                                width="{{var logo_width}}"
+                                {{else}}
+                                width="180"
+                                {{/if}}
+
+                        {{if logo_height}}
+                        height="{{var logo_height}}"
+                        {{else}}
+                        height="52"
+                        {{/if}}
+                        src="{{view url=images/magento-logo.svg}}"
+                        alt="{{var logo_alt}}"
+                        border="0"
+                        />
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="main-content">
+                        <!-- Begin Content -->
+
+<p class="greeting">{{trans "Happy Birthday, %name" name=$data.name}}!</p>
+<p>You received the following product <a href="{{var data.producturl}}">{{trans "%product" product=$data.productname}}</a><br/>
+    as present from {{trans "from %customer_name" customer_name=$data.customer_name}}
+    [{{trans "%customer_email" customer_email=$data.customer_email}}]</p>
+<p>     {{if data.productimage}}<img src="{{var data.productimage}}" width="300"/>{{/if}}</p>
+                        <!-- End Content -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="footer">
+                        <p class="closing">{{trans "Thank you, %store_name" store_name=$store.getFrontendName()}}!</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!-- End wrapper table -->
+</body>

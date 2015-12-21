@@ -1,0 +1,27 @@
+<script type="text/javascript">// <![CDATA[
+    require([
+        "jquery",
+        "mage/calendar"
+    ], function($){
+
+        $("#cadou-form-modal #birthdate").calendar({
+            showTime: false,
+            defaultDate:"-20y",
+            showOn:"both"
+            //dateFormat: "yy-mm-dd"
+        });
+
+/*        $('#cadou-form-modal #birthdate').focus(
+            function(){
+                var self = $('#cadou-form-modal #birthdate');
+                if ($(self).hasClass('hasDatepicker'))
+                {
+                    if ($(self).next().hasClass('ui-datepicker-trigger'))
+                    {
+                        $(self).next().click();
+                    }
+                }
+            });*/
+    });
+
+// ]]></script>
